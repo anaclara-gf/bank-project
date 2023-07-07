@@ -22,7 +22,7 @@ Substitua o [nomecontainer] pelo que fizer mais sentido para você e o [nomeimag
 
 Os endpoints da API estão descritos abaixo.
 
-## Criar conta
+## 1. Criar conta
 
 ### Request
 
@@ -78,7 +78,7 @@ HTTP/1.1 400 BAD REQUEST
         "erro": "O nome_banco deve ser Itaú, Santamder, Caixa, Banco do Brasil ou Bradesco"
     }
 
-## Achar contas
+## 2. Achar contas
 
 ### Request
 
@@ -100,7 +100,9 @@ HTTP/1.1 200 OK
                 "nome_banco": String,
                 "tipo_conta": String,
                 "nome_titular": String,
+                // O nome do titular vai vir de acordo com o token do login
                 "limite_cartao": Number,
+                // O limite do cartão inicia como 100, mas você pode aumentar depois
                 "__v": Number
             }
         ]
@@ -112,7 +114,7 @@ HTTP/1.1 400 BAD REQUEST
         "erro": "Ocorreu um erro durante o processamento da requisição [erro]"
     }
 
-## Aumentar limite
+## 3. Aumentar limite
 
 ### Request
 
